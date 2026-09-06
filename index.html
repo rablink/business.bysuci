@@ -172,7 +172,96 @@
         text-transform: uppercase;
         margin-top: 2px;
     }
-  </style>
+
+  
+.badge-cyan {
+  color: #22d3ee;
+  background: rgba(34,211,238,.1);
+  border: 1px solid rgba(34,211,238,.3);
+}
+
+
+/* COPY BOX */
+.copy-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px 8px 16px;
+  border-radius: 15px;
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(96,165,250,.25);
+}
+
+.copy-box span {
+  flex: 1;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border-radius: 11px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg,#2563eb,#4f46e5);
+  box-shadow: 0 0 18px rgba(37,99,235,.3);
+  transition: .25s;
+}
+
+.copy-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(37,99,235,.55);
+}
+
+.dana-copy {
+  background: linear-gradient(135deg,#06b6d4,#2563eb);
+}
+
+
+/* INFO */
+.glass-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(96,165,250,.18);
+  backdrop-filter: blur(15px);
+}
+
+
+/* ANIMATION */
+@keyframes floatCard {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn .8s ease forwards;
+}
+</style>
 </head>
 
 <body class="min-h-screen">
