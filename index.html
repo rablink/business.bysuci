@@ -174,93 +174,7 @@
     }
 
   
-.badge-cyan {
-  color: #22d3ee;
-  background: rgba(34,211,238,.1);
-  border: 1px solid rgba(34,211,238,.3);
-}
 
-
-/* COPY BOX */
-.copy-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 8px 8px 16px;
-  border-radius: 15px;
-  background: rgba(0,0,0,.25);
-  border: 1px solid rgba(96,165,250,.25);
-}
-
-.copy-box span {
-  flex: 1;
-  color: white;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.copy-btn {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 10px 16px;
-  border-radius: 11px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(135deg,#2563eb,#4f46e5);
-  box-shadow: 0 0 18px rgba(37,99,235,.3);
-  transition: .25s;
-}
-
-.copy-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(37,99,235,.55);
-}
-
-.dana-copy {
-  background: linear-gradient(135deg,#06b6d4,#2563eb);
-}
-
-
-/* INFO */
-.glass-info {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 20px 24px;
-  border-radius: 20px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(96,165,250,.18);
-  backdrop-filter: blur(15px);
-}
-
-
-/* ANIMATION */
-@keyframes floatCard {
-  0%,100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-slideIn {
-  animation: slideIn .8s ease forwards;
-}
 </style>
 </head>
 
@@ -693,27 +607,97 @@ Silahkan simak penjelasan dibawah ini untuk info lebih lengkap akan dijelaskan s
 
   </div>
 
+<section class="animate-slideIn">
+  <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl"><!-- Header -->
+<div class="text-center mb-8">
+  <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-3">
+    PAYMENT
+  </span>
+  <h2 class="text-3xl font-extrabold text-primary">Pembayaran Join</h2>
+  <p class="text-gray-500 mt-2">Silakan pilih metode pembayaran yang tersedia</p>
+  
+  <div class="mt-5 inline-block bg-secondary/10 px-6 py-3 rounded-xl">
+    <span class="text-gray-600">Harga Join</span>
+    <div class="text-3xl font-extrabold text-secondary">Rp50.000</div>
+  </div>
 </div>
 
+<!-- Payment Cards -->
+<div class="grid md:grid-cols-2 gap-6">
 
-<!-- INFO -->
-<div class="mt-7 glass-info">
+  <!-- BCA -->
+  <div class="border border-blue-100 rounded-2xl p-6 bg-gradient-to-br from-blue-50 to-white hover:shadow-lg transition duration-300">
+    <div class="flex items-center justify-between mb-5">
+      <div>
+        <p class="text-sm text-gray-500">Transfer Bank</p>
+        <h3 class="text-2xl font-extrabold text-blue-700">BCA</h3>
+      </div>
+      <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
+        BCA
+      </div>
+    </div>
 
-  <div class="text-blue-400 text-3xl">
-    <i class="fas fa-receipt"></i>
+    <p class="text-sm text-gray-500 mb-1">Nomor Rekening</p>
+
+    <div class="flex items-center gap-2 bg-white border rounded-xl p-3">
+      <span id="bcaNumber" class="flex-1 font-bold text-gray-800 tracking-wide">
+        8435288070
+      </span>
+
+      <button
+        onclick="copyPayment('8435288070', this)"
+        class="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
+        Copy
+      </button>
+    </div>
+
+    <div class="mt-4">
+      <p class="text-sm text-gray-500">Atas Nama</p>
+      <p class="font-semibold text-gray-800">Suci Utami Putri</p>
+    </div>
   </div>
 
-  <div>
-    <h4 class="text-white font-bold text-lg">
-      Setelah Pembayaran
-    </h4>
+  <!-- DANA -->
+  <div class="border border-sky-100 rounded-2xl p-6 bg-gradient-to-br from-sky-50 to-white hover:shadow-lg transition duration-300">
+    <div class="flex items-center justify-between mb-5">
+      <div>
+        <p class="text-sm text-gray-500">E-Wallet</p>
+        <h3 class="text-2xl font-extrabold text-sky-600">DANA</h3>
+      </div>
+      <div class="w-12 h-12 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold">
+        D
+      </div>
+    </div>
 
-    <p class="text-gray-400 text-sm mt-1">
-      Jangan lupa kirim <b class="text-blue-400">
-      bukti transfer</b> untuk proses selanjutnya.
-    </p>
+    <p class="text-sm text-gray-500 mb-1">Nomor DANA</p>
+
+    <div class="flex items-center gap-2 bg-white border rounded-xl p-3">
+      <span class="flex-1 font-bold text-gray-800 tracking-wide">
+        085267180783
+      </span>
+
+      <button
+        onclick="copyPayment('085267180783', this)"
+        class="px-4 py-2 rounded-lg bg-sky-500 text-white font-semibold hover:bg-sky-600 transition">
+        Copy
+      </button>
+    </div>
+
+    <div class="mt-4">
+      <p class="text-sm text-gray-500">Atas Nama</p>
+      <p class="font-semibold text-gray-800">Suci Utami Putri</p>
+    </div>
   </div>
 
+</div>
+
+<!-- Notice -->
+<div class="mt-6 p-4 rounded-xl bg-gray-50 border border-gray-100 text-center">
+  <p class="text-gray-600 text-sm">
+    Setelah melakukan pembayaran, jangan lupa
+    <span class="font-bold text-primary">kirim bukti transfer</span>
+    untuk proses selanjutnya.
+  </p>
 </div>
 
   </div>
@@ -731,7 +715,7 @@ Silahkan simak penjelasan dibawah ini untuk info lebih lengkap akan dijelaskan s
       <p class="mt-4 text-sm text-gray-200">Hubungi admin untuk info pembayaran dan fasilitas lengkap.</p>
     </section>
 
-  </main>
+</main>
 
   <!-- Sticky Footer CTA -->
   <a href="https/wa.me/6285267180783" class="fixed bottom-4 right-4 z-50 px-6 py-3 bg-secondary text-white font-extrabold rounded-full shadow-2xl flex items-center space-x-2 text-lg hover:bg-green-600 transition duration-300 animate-pulseShadow">
@@ -858,23 +842,17 @@ Silahkan simak penjelasan dibawah ini untuk info lebih lengkap akan dijelaskan s
 
 
 function copyPayment(number, button) {
-
   navigator.clipboard.writeText(number).then(() => {
+    const originalText = button.innerText;
 
-    const oldContent = button.innerHTML;
-
-    button.innerHTML =
-      '<i class="fas fa-check"></i><span>Tersalin!</span>';
-
-    button.style.transform = "scale(.95)";
+    button.innerText = "Tersalin!";
+    button.classList.add("scale-95");
 
     setTimeout(() => {
-      button.innerHTML = oldContent;
-      button.style.transform = "";
+      button.innerText = originalText;
+      button.classList.remove("scale-95");
     }, 1500);
-
   });
-
 }
 </script>
 </body>
