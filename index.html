@@ -464,101 +464,172 @@ Silahkan simak penjelasan dibawah ini untuk info lebih lengkap akan dijelaskan s
         </div>
       </div>
     </section>
-<section class="animate-slideIn">
-  <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl"><!-- Header -->
-<div class="text-center mb-8">
-  <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-3">
+section< class="animate-slideIn">
+<section class="relative overflow-hidden py-10">  <!-- Glow Background -->  <div class="absolute -top-20 -left-20 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl"></div>  <div class="relative"><!-- Header -->
+<div class="text-center mb-10 animate-slideIn">
+  <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full
+              bg-blue-500/10 border border-blue-400/30
+              text-blue-400 font-bold shadow-[0_0_20px_rgba(59,130,246,.25)]">
+    <i class="fas fa-credit-card"></i>
     PAYMENT
-  </span>
-  <h2 class="text-3xl font-extrabold text-primary">Pembayaran Join</h2>
-  <p class="text-gray-500 mt-2">Silakan pilih metode pembayaran yang tersedia</p>
-  
-  <div class="mt-5 inline-block bg-secondary/10 px-6 py-3 rounded-xl">
-    <span class="text-gray-600">Harga Join</span>
-    <div class="text-3xl font-extrabold text-secondary">Rp50.000</div>
+  </div>
+
+  <h2 class="text-4xl md:text-5xl font-extrabold mt-5
+             text-white">
+    Pembayaran <span class="text-blue-400">Join</span>
+  </h2>
+
+  <p class="text-gray-400 mt-3">
+    Pilih metode pembayaran yang tersedia
+  </p>
+
+  <!-- Harga -->
+  <div class="inline-block mt-6 px-8 py-4 rounded-2xl
+              bg-white/5 backdrop-blur-xl
+              border border-yellow-400/40
+              shadow-[0_0_30px_rgba(250,204,21,.15)]">
+
+    <p class="text-gray-400 text-sm">Harga Join</p>
+    <p class="text-4xl font-black text-yellow-400">
+      Rp50.000
+    </p>
   </div>
 </div>
 
-<!-- Payment Cards -->
+
+<!-- PAYMENT CARDS -->
 <div class="grid md:grid-cols-2 gap-6">
 
   <!-- BCA -->
-  <div class="border border-blue-100 rounded-2xl p-6 bg-gradient-to-br from-blue-50 to-white hover:shadow-lg transition duration-300">
-    <div class="flex items-center justify-between mb-5">
-      <div>
-        <p class="text-sm text-gray-500">Transfer Bank</p>
-        <h3 class="text-2xl font-extrabold text-blue-700">BCA</h3>
+  <div class="payment-card group">
+
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-4">
+
+        <div class="payment-icon bca-icon">
+          <i class="fas fa-building-columns"></i>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-black text-white">BCA</h3>
+          <p class="text-gray-400 text-sm">Transfer Bank</p>
+        </div>
+
       </div>
-      <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
-        BCA
-      </div>
+
+      <span class="badge-blue">
+        <i class="fas fa-shield-halved"></i>
+        Aman
+      </span>
     </div>
 
-    <p class="text-sm text-gray-500 mb-1">Nomor Rekening</p>
 
-    <div class="flex items-center gap-2 bg-white border rounded-xl p-3">
-      <span id="bcaNumber" class="flex-1 font-bold text-gray-800 tracking-wide">
+    <p class="text-gray-400 text-sm mb-2">
+      Nomor Rekening
+    </p>
+
+    <div class="copy-box">
+
+      <span id="bcaNumber">
         8435288070
       </span>
 
-      <button
-        onclick="copyPayment('8435288070', this)"
-        class="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
-        Copy
+      <button onclick="copyPayment('8435288070', this)"
+              class="copy-btn">
+        <i class="fas fa-copy"></i>
+        <span>Copy</span>
       </button>
+
     </div>
 
-    <div class="mt-4">
-      <p class="text-sm text-gray-500">Atas Nama</p>
-      <p class="font-semibold text-gray-800">Suci Utami Putri</p>
+    <div class="mt-5">
+      <p class="text-gray-500 text-sm">Atas Nama</p>
+      <p class="text-white font-bold">
+        Suci Utami Putri
+      </p>
     </div>
+
   </div>
 
+
   <!-- DANA -->
-  <div class="border border-sky-100 rounded-2xl p-6 bg-gradient-to-br from-sky-50 to-white hover:shadow-lg transition duration-300">
-    <div class="flex items-center justify-between mb-5">
-      <div>
-        <p class="text-sm text-gray-500">E-Wallet</p>
-        <h3 class="text-2xl font-extrabold text-sky-600">DANA</h3>
+  <div class="payment-card dana-card group">
+
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-4">
+
+        <div class="payment-icon dana-icon">
+          <i class="fas fa-wallet"></i>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-black text-white">DANA</h3>
+          <p class="text-gray-400 text-sm">E-Wallet</p>
+        </div>
+
       </div>
-      <div class="w-12 h-12 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold">
-        D
-      </div>
+
+      <span class="badge-cyan">
+        <i class="fas fa-bolt"></i>
+        Praktis
+      </span>
     </div>
 
-    <p class="text-sm text-gray-500 mb-1">Nomor DANA</p>
 
-    <div class="flex items-center gap-2 bg-white border rounded-xl p-3">
-      <span class="flex-1 font-bold text-gray-800 tracking-wide">
+    <p class="text-gray-400 text-sm mb-2">
+      Nomor DANA
+    </p>
+
+    <div class="copy-box">
+
+      <span>
         085267180783
       </span>
 
-      <button
-        onclick="copyPayment('085267180783', this)"
-        class="px-4 py-2 rounded-lg bg-sky-500 text-white font-semibold hover:bg-sky-600 transition">
-        Copy
+      <button onclick="copyPayment('085267180783', this)"
+              class="copy-btn dana-copy">
+        <i class="fas fa-copy"></i>
+        <span>Copy</span>
       </button>
+
     </div>
 
-    <div class="mt-4">
-      <p class="text-sm text-gray-500">Atas Nama</p>
-      <p class="font-semibold text-gray-800">Suci Utami Putri</p>
+    <div class="mt-5">
+      <p class="text-gray-500 text-sm">Atas Nama</p>
+      <p class="text-white font-bold">
+        Suci Utami Putri
+      </p>
     </div>
+
   </div>
 
 </div>
 
-<!-- Notice -->
-<div class="mt-6 p-4 rounded-xl bg-gray-50 border border-gray-100 text-center">
-  <p class="text-gray-600 text-sm">
-    Setelah melakukan pembayaran, jangan lupa
-    <span class="font-bold text-primary">kirim bukti transfer</span>
-    untuk proses selanjutnya.
-  </p>
+
+<!-- INFO -->
+<div class="mt-7 glass-info">
+
+  <div class="text-blue-400 text-3xl">
+    <i class="fas fa-receipt"></i>
+  </div>
+
+  <div>
+    <h4 class="text-white font-bold text-lg">
+      Setelah Pembayaran
+    </h4>
+
+    <p class="text-gray-400 text-sm mt-1">
+      Jangan lupa kirim <b class="text-blue-400">
+      bukti transfer</b> untuk proses selanjutnya.
+    </p>
+  </div>
+
 </div>
 
   </div>
 </section>
+
     <!-- Final CTA Section -->
     <section class="text-center bg-primary p-8 rounded-xl shadow-2xl">
       <h2 class="text-3xl font-bold text-accent mb-4">🚀 SIAP GABUNG SEKARANG?</h2>
@@ -695,20 +766,27 @@ Silahkan simak penjelasan dibawah ini untuk info lebih lengkap akan dijelaskan s
   setInterval(updateCountdown, 1000);
   updateCountdown();
     
-function copyPayment(number, button) {
-  navigator.clipboard.writeText(number).then(() => {
-    const originalText = button.innerText;
 
-    button.innerText = "Tersalin!";
-    button.classList.add("scale-95");
+
+function copyPayment(number, button) {
+
+  navigator.clipboard.writeText(number).then(() => {
+
+    const oldContent = button.innerHTML;
+
+    button.innerHTML =
+      '<i class="fas fa-check"></i><span>Tersalin!</span>';
+
+    button.style.transform = "scale(.95)";
 
     setTimeout(() => {
-      button.innerText = originalText;
-      button.classList.remove("scale-95");
+      button.innerHTML = oldContent;
+      button.style.transform = "";
     }, 1500);
-  });
-}
 
-  </script>
+  });
+
+}
+</script>
 </body>
 </html>
